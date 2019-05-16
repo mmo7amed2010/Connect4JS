@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  background: #0074B3;
+
+}
+
+#gridView {
+  background: #0074B3;
+  cursor: pointer;
+}
+.col {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 100%;
+  margin: 5px;
+}
+
+.col.blank {
+  cursor: pointer;
+}
+
+.place-red {
+  background-color: #D50000;
+}
+.col.red {
+  background-color: #D50000;
+}
+
+.place-yellow {
+  background-color:  #DAD400;
+}
+
+
+.col.yellow {
+  background-color:  #DAD400;
+}

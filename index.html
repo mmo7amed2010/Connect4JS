@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Connect 4 ai</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+
+  </head>
+
+  <body>
+<form id="cpa-form">
+    <select required id="difficulty">
+      <option value="">difficulty</option>
+      <option value="7">medium</option>
+      <option value="1">easy</option>
+    </select>
+    <select required id="color">
+      <option value="">who start ?</option>
+      <option value="red">AI</option>
+      <option value="yellow">Human</option>
+    </select>
+    <input type="submit" value="start game">
+</form>
+    <div id="gridView"></div>
+  </body>
+  <footer>
+    <script src="connect4.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+              $("#cpa-form").submit(function(e){
+                      e.preventDefault();
+              location.replace(location.protocol + '//' + location.host + location.pathname+`?color=${$("#color").val()}&difficulty=${$("#difficulty").val()}`)
+
+        })
+           var url = new URL(window.location.href);
+            var color = url.searchParams.get("color");
+            var difficulty = url.searchParams.get("difficulty");
+            if(color && difficulty){
+              $("#color").val(color)
+              $("#difficulty").val(difficulty)
+                connect4 = new Connect4('#gridView',color,difficulty)
+
+            }
+
+
+        $('#playAgain').click(function() {
+          connect4.playAgain();
+        })
+      });
+    </script>
+  </footer>
+</html>
