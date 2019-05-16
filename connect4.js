@@ -50,10 +50,6 @@ var Connect4=function (gridView,whoStart,depth) {
 
    
   }
-  proto.playAgain=function () {
-    location.reload();
-  }
-
   proto.countConnected=function(y,x,row,col){
     const that=this
     if((y>0 && row==this.rows-1) || (y<0 && row==0) ||(x>0 && col==this.columns-1) ||(x<0 && col==0))
